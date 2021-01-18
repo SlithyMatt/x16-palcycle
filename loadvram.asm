@@ -8,10 +8,8 @@ loadvram:   ; A = VRAM address (19:12)
             ; X = VRAM address (11:4)
             ; Y = filename address (7:0)
    pha      ; push original A argument
-   txa
-   sta ZP_PTR_1   ; store original X argument to ZP
-   tya
-   sta ZP_PTR_1+1 ; store original Y argument to ZP
+   stx ZP_PTR_1   ; store original X argument to ZP
+   sty ZP_PTR_1+1 ; store original Y argument to ZP
    lda #0
    sta ROM_BANK
    lda #1
